@@ -24,6 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
   yoyo_player: ^0.1.0
+  http: ^0.12.2
+  flutter_hls_parser: ^1.0.0
+  provider: ^5.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
