@@ -14,9 +14,9 @@ class View extends StatelessWidget {
       SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     else SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
     return Scaffold(
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlayList()));
-      },),
+      // floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: (){
+      //   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlayList()));
+      // },),
       body: SafeArea(
         child: YoYoPlayer(
           aspectRatio: 16 / 9,
