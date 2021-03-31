@@ -3,7 +3,17 @@ import 'package:iptv/screens/view.dart';
 import 'package:iptv/services/api/get_playlist.dart';
 import 'package:provider/provider.dart';
 
-class GridView1 extends StatelessWidget {
+class GridView1 extends StatefulWidget {
+  @override
+  _GridView1State createState() => _GridView1State();
+}
+
+class _GridView1State extends State<GridView1> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     dynamic response = context.watch<GetPlaylist>();

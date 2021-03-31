@@ -30,32 +30,6 @@ class GetPlaylist with ChangeNotifier{
   List title=[];
   List image=[];
   List channel=[];
-  // List response=[];
-  //
-  // GetPlaylist([String title,String image, String channel]){
-  //   this.title=title;
-  //   this.image=image;
-  //   this.channel=channel;
-  //   notifyListeners();
-  // }
-  //
-  // void getList1(title){
-  //   // this.title.add(title);
-  //   notifyListeners();
-  //   print(title);
-  // }
-  //
-  // void getList2(image){
-  //   // this.image.add(image);
-  //   notifyListeners();
-  //   print(image);
-  // }
-  //
-  // void getList3(channel){
-  //   // this.channel.add(channel);
-  //   notifyListeners();
-  //   print(channel);
-  // }
 
   void getResponse(res){
     // this.response=res;
@@ -70,6 +44,7 @@ class GetPlaylist with ChangeNotifier{
       if (res.toString().split(' ')[i].contains('png'))
         // print(res.toString().split(' ')[i].split('"')[1]);
         this.image.add(res.toString().split(' ')[i].split('"')[1]);
+      print(i.toString()+'=='+res.toString().split(' ').length.toString());
     }
     notifyListeners();
   }

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iptv/models/playlist.dart';
 import 'package:iptv/screens/gridview.dart';
-import 'package:iptv/screens/homepage.dart';
-import 'package:iptv/screens/playlist.dart';
 import 'package:iptv/services/api/get_playlist.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +14,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    AlertDialog();
+    if(context.watch<GetPlaylist>().image==null)
     createPlaylistState(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
