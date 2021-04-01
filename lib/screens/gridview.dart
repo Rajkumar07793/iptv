@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:iptv/screens/view.dart';
 import 'package:iptv/services/api/get_playlist.dart';
 import 'package:provider/provider.dart';
@@ -12,8 +13,22 @@ class _GridView1State extends State<GridView1> {
 
   @override
   void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Please wait..."),
+          // content: Center(child: CircularProgressIndicator(),),
+        )
+    ));
+      createPlaylistState(context).whenComplete(() => Navigator.pop(context));
     super.initState();
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     dynamic response = context.watch<GetPlaylist>();
@@ -24,19 +39,18 @@ class _GridView1State extends State<GridView1> {
       //   print(response.channel.length);
       // },),
       body: GridView.count(
-        crossAxisCount: 5,mainAxisSpacing: 2,crossAxisSpacing: 2,
+        crossAxisCount: 3,mainAxisSpacing: 2,crossAxisSpacing: 2,
         children: [
-          for (int i = 0; i < response.image.length; i++)
-        // if (response.toString().split(' ')[i].contains('png'))
+          for (int i = 0; i < response.channel.length; i++)
             GestureDetector(onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>View(channel: response.channel[i])));
             },
               child: Container(
-                color: Colors.amberAccent,
+                color: Colors.grey,
                 // child: Text(response.image[i]),
-                child: Image.network(response.image[i]),
+                child: (response.image.length<response.channel.length)?Icon(Icons.image):Image.network(response.image[i]),
               ),
-            )
+            ),
         ],
       ),
     );

@@ -1,9 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:iptv/models/playlist.dart';
-import 'package:flutter_hls_parser/flutter_hls_parser.dart';
-import 'package:iptv/screens/homepage.dart';
 import 'package:iptv/screens/view.dart';
 import 'package:iptv/services/api/get_playlist.dart';
 import 'package:provider/provider.dart';

@@ -14,8 +14,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    if(context.watch<GetPlaylist>().image==null)
-    createPlaylistState(context);
+    // if(context.watch<GetPlaylist>().image==null)
+    // createPlaylistState(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'IP TV',
