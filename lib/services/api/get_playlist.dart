@@ -30,9 +30,10 @@ class GetPlaylist with ChangeNotifier{
   List title=[];
   List image=[];
   List channel=[];
+  dynamic response;
 
   void getResponse(res){
-    // this.response=res;
+    this.response=res;
     for (int i = 0; i < res.toString().split(' ').length; i++) {
       if (res.toString().split(' ')[i].contains('title'))
         // print(res.toString().split(' ')[i].split('"')[1]);

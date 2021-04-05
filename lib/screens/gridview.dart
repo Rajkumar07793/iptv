@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:iptv/screens/playlist.dart';
 import 'package:iptv/screens/view.dart';
 import 'package:iptv/services/api/get_playlist.dart';
 import 'package:provider/provider.dart';
@@ -33,11 +33,9 @@ class _GridView1State extends State<GridView1> {
   Widget build(BuildContext context) {
     dynamic response = context.watch<GetPlaylist>();
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(onPressed: (){
-      //   print(response.title.length);
-      //   print(response.image.length);
-      //   print(response.channel.length);
-      // },),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PlayList()));
+      },),
       body: GridView.count(
         crossAxisCount: 3,mainAxisSpacing: 2,crossAxisSpacing: 2,
         children: [
